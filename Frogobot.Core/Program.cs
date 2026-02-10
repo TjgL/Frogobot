@@ -21,6 +21,8 @@ internal class Program
 			builder.Configuration.AddUserSecrets<Program>();
 		}
 
+		builder.Services.Configure<DiscordEmojiOptions>(builder.Configuration.GetSection(DiscordEmojiOptions.SectionName));
+
 		// Frogobot Data
 		builder.Services.AddDbContextPool<FrogoContext>(options =>
 		{
