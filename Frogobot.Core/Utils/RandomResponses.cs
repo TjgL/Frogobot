@@ -28,7 +28,7 @@ public static class RandomResponses
 		"{0} a appuyé sur le bouton *Possesslime*… encore. Voilà {1} (total {2}).",
 		"Je valide la référence, {0}. Récompense : {1}. Compteur : {2}.",
 		"Oh non ! {0} d'où sort tu ce *Posseslime* ?! Pas de ton... j'espère... parce que {1} en plus ça en fait un total de {2} à l'intérieur",
-		"{0} collectionne les posseslimes {1} comme les MST franchement psartek ça en {2}",
+		"{0} collectionne les posseslimes {1} comme les MST franchement psartek ça fait en {2}",
 	];
 	
 	/// <summary> Get a random response from the list of Possesslime responses. </summary>
