@@ -9,12 +9,12 @@ using User = NetCord.User;
 
 namespace Frogobot.Core.Commands;
 
-[UsedImplicitly]
 public class PossessPointCommands : ApplicationCommandModule<ApplicationCommandContext>
 {
 	private readonly IPossessPointService _possessPointService;
 	private readonly DiscordEmojiOptions _emoji;
 	
+	[UsedImplicitly(ImplicitUseKindFlags.InstantiatedNoFixedConstructorSignature)]
 	public PossessPointCommands(IPossessPointService possessPointService, IOptions<DiscordEmojiOptions> emojiOptions)
 	{
 		_possessPointService = possessPointService;
@@ -22,9 +22,11 @@ public class PossessPointCommands : ApplicationCommandModule<ApplicationCommandC
 	}
 	
 	[SlashCommand("possess", "Ajoute un Possess-Point à la personne choisie")]
-	public async Task<string> Possess(User user)
+	public async Task<string> Possess(User? user = null)
 	{
+		user ??= Context.User;
 		var total = await _possessPointService.AddPossessPointAsync(user.Id);
+		
 		return $"{user} a mentionné Possesslime ! {_emoji.PossessPoint}\nIl a maintenant **{total} Possess-Points**.";
 	}
 	
