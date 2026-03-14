@@ -32,6 +32,7 @@ internal class Program
 		});
 		
 		builder.Services.AddScoped<IPossessPointService, PossessPointService>();
+		builder.Services.AddScoped<IGameFinderService, GameFinderService>();
 
 		// Discord Bot
 		builder.Services
