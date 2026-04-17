@@ -16,6 +16,11 @@ public class PossessPointService : IPossessPointService
 
 	public async Task<int> AddPossessPointAsync(ulong userId)
 	{
+		return await IncreasePossessPointsAsync(userId, 1);
+	}
+
+	public async Task<int> IncreasePossessPointsAsync(ulong userId, int points)
+	{
 		var user = await _dbContext.Users.FindAsync(userId);
 		if (user is null)
 		{
@@ -23,7 +28,7 @@ public class PossessPointService : IPossessPointService
 			_dbContext.Users.Add(user);
 		}
 		
-		user.PossessPoints++;
+		user.PossessPoints += points;
 		await _dbContext.SaveChangesAsync();
 		return user.PossessPoints;
 	}
