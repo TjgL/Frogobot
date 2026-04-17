@@ -1,4 +1,5 @@
-﻿using Frogobot.Data;
+﻿using Frogobot.Core.Utils;
+using Frogobot.Data;
 using Frogobot.Data.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -32,6 +33,7 @@ internal class Program
 		});
 		
 		builder.Services.AddScoped<IPossessPointService, PossessPointService>();
+		builder.Services.AddSingleton<IRouletteService, RouletteService>();
 
 		// Discord Bot
 		builder.Services
