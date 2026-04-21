@@ -23,7 +23,7 @@ public class RouletteCommands : ApplicationCommandModule<ApplicationCommandConte
     [SlashCommand("roulette", "Misez vos Possess-Points à la roulette !")]
     public async Task<string> Roulette(
         [SlashCommandParameter(Name = "mise", Description = "La mise en Possess-Points")] int bet, 
-        [SlashCommandParameter(Name = "type", Description = "Le type de pari à effectuer")] RouletteBetType type = RouletteBetType.Red,
+        [SlashCommandParameter(Name = "type", Description = "Le type de pari à effectuer")] RouletteBetType type,
         [SlashCommandParameter(Name = "numéro", Description = "Le numéro à miser (pour le pari sur un nombre)")] int? number = null)
     {
         if (bet <= 0)
