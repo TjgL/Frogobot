@@ -23,7 +23,7 @@
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
       <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.6" />
-      <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.6" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.7" />
       <PackageReference Include="NetCord" Version="1.0.0-alpha.468" />
       <PackageReference Include="NetCord.Hosting" Version="1.0.0-alpha.468" />
       <PackageReference Include="NetCord.Hosting.Services" Version="1.0.0-alpha.468" />
